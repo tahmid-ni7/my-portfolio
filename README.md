@@ -1,4 +1,4 @@
-# my-website
+# My personal website
 This is my personal website build with django. Full dynamic website to show my projects.
 
 ### Features
