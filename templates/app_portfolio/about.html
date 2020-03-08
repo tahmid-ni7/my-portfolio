@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_block %}About{% endblock %}
+{% block body_block %}
+    <div class="page-header clear-filter page-header-small" filter-color="orange">
+      <div class="page-header-image" data-parallax="true" style="background-image:url('{% static "img/bg3.jpg" %}');">
+    </div>
+
+  {% for about in about_me %}
+  <div class="container">
+    <div class="photo-container">
+      <img src="{{ about.profile_picture.url }}" alt="" width="200" height="200" class="rounded-circle">
+    </div>
+    <h3 class="title">{{ about.name }}</h3>
+    <p class="category">{{ about.designation }}</p>
+  </div>
+  </div>
+  <div class="section section-about-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title text-center">About {{ about.name }}</h2>
+            <h5 class="description">{{ about.long_description | safe }}</h5>
+            <p class="blockquote blockquote-primary"><strong>{{ about.quote_2 | safe }}</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+ {% endfor %}
+{% endblock %}

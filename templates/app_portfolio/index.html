@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_block %}Welcome {% endblock %}
+{% block body_block %}
+  {% for about in about_me %}
+    <div class="page-header page-header-small">
+      <div class="page-header-image" data-parallax="true" style="background-image:
+      url('{{about.background_picture.url}}');">
+      </div>
+      <div class="content-center">
+        <div class="container">
+          <h1 class="title">{{ about.name }}'s <span class="text-primary">Website.</span> </h1>
+          <p>{{ about.designation }}</p>
+          <div class="text-center">
+            <a href="https://github.com/tahmid-ni7" class="btn btn-primary btn-icon btn-round">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://stackoverflow.com/users/11026749/tahmid-ni7" class="btn btn-primary btn-icon btn-round">
+              <i class="fab fa-stack-overflow"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tahmid-nishat-083448130/" class="btn btn-primary btn-icon btn-round">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-about-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title">Who am I?</h2>
+            <h5 class="description">{{ about.short_description }}
+              <a href="{% url 'portfolio:about' %}" class="card-link">...More?</a></h5>
+            <p class="blockquote blockquote-primary">{{ about.quote_1 | safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  
+  {% if projects %}
+    
+    <div class="section section-featured-projects">
+      <div class="container">
+      <h2 class="title text-center">Featured Projects</h2>
+        <div class="row con-flex">
+          {% for project in projects %}
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="card">
+            <img class="card-img-top" src="{{ project.project_image.url }}" alt="Project Image">
+            <div class="card-body">
+              <a href="{% url 'portfolio:project_details' project.id %}" class="card-link"><h4 class="card-title">{{ project.title }}</h4></a>
+              <p class="card-text">{{ project.description | safe | truncatewords_html:12 }}</p>
+              <a href="{% url 'portfolio:project_details' project.id %}" class="card-link"><i class="fas fa-eye"></i> Details
+              </a>
+                  {% if project.live_link %}
+              <a href="{{ project.live_link }}" class="card-link"><i class="fas fa-globe"></i> See live</a>
+              {% endif %}
+              <a href="{{project.github_link}}" class="card-link"><i class="fab fa-github"></i> Github
+                link</a>
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+  {% else %}
+    <div class="container section">
+      <div class="alert alert-warning text-center">No Featured projects!</div>
+    </div>
+  {% endif %}
+{% endblock %}

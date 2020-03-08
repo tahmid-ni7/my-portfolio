@@ -1,0 +1,18 @@
+/*************
+ALL CUSTOM CSS
+**************/
+
+img.card-img-top {
+    height: 230px;
+}
+
+
+/* All div with same height */
+.con-flex >div {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-header:before {
+  background-color: rgba(0, 0, 0, 0.6);
+}

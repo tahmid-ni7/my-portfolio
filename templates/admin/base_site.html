@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title%}
+Tahmid-Ni7's website - Admin
+{% endblock %}
+
+{% block branding %}
+<h1 id="head">
+ <a href="{% url 'admin:index' %}" class="logo-text"><img src="{% static 'img/logo.png' %}" height="32">|| Admin
+  area</a>
+</h1>
+{% endblock %}
+
+{% block extrastyle %}
+ <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}

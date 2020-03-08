@@ -1,0 +1,30 @@
+<footer class="footer footer-default">
+      <div class=" container ">
+        <nav>
+          <ul>
+            <li>
+              <a href="{% url 'portfolio:home' %}">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'portfolio:projects' %}">
+                projects
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'portfolio:about' %}">
+                About me
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright" id="copyright">
+          &copy;
+          <script>
+            document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+          </script>, Coded by
+          <a href="https://tahmid-ni7.github.io/portfolio/" target="_blank">Tahmid-Ni7</a>.
+        </div>
+      </div>
+    </footer>

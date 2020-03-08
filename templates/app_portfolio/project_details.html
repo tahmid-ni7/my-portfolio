@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title_block %}{{ project.title }} {% endblock %}
+{% block body_block %}
+<div class="page-header page-header-small project-header">
+      <div class="page-header-image" data-parallax="true" style="background-image:
+      url('{{ project.project_image.url }}');">
+      </div>
+      <div class="content-center">
+        <div class="container">
+          <h2 class="title">{{ project.title }}</h2>
+          <p>Language: <strong>{{ project.project_language }}</strong> | Framework:
+	          <strong>{{ project.framework }}</strong></p>
+          <div class="text-center">
+	        {% if project.live_link %}
+            <a href="{{ project.live_link }}" class="btn btn-info" target="_blank">
+              <i class="fas fa-globe"></i> See Live
+            </a>
+	        {% endif %}
+            <a href="{{ project.github_link }}" class="btn btn-primary" target="_blank">
+              <i class="fab fa-github"></i> Github link
+            </a>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="section section-descriptions">
+  <div class="container">
+    <h2 class="title text-center">Project Description</h2>
+    <h5 class="description">{{ project.description | safe }}</h5>
+
+  </div>
+</div>
+
+{% endblock %}
