@@ -16,3 +16,9 @@ img.card-img-top {
 .project-header:before {
   background-color: rgba(0, 0, 0, 0.6);
 }
+.description,
+.card-description,
+.footer-big p {
+  color: #333!important;
+  font-weight: 400!important;
+}

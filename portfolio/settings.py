@@ -91,7 +91,11 @@ DATABASES = {
         'NAME': 'portfolio',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        }
     }
 }
 
