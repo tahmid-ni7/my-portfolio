@@ -38,3 +38,7 @@ input[type="submit"], button:hover{
 .logo-text{
     color: #fff!important;
 }
+th, td{
+    font-size: 14px;
+    padding: 10px;
+}

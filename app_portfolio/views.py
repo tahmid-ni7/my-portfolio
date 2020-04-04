@@ -26,7 +26,7 @@ def projects(request):
 
 
 def project_details(request, project_id):
-    project = get_object_or_404(Project, pk=project_id)
+    project = get_object_or_404(Project, pk=project_id, is_published=True)
 
     context = {'project': project}
     return render(request, 'app_portfolio/project_details.html', context)
