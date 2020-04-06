@@ -15,33 +15,15 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation"
            data-nav-image="{% static 'img/blurred-image-1.jpg' %}">
         <ul class="navbar-nav">
-          <li
-          {% if '/' == request.path %}
-          class = "nav-item active"
-          {% else %}
-          class = "nav-item"
-          {% endif %}
-          >
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'portfolio:home' %}">Home</a>
           </li>
           
-          <li
-          {% if 'projects' in request.path %}
-          class = "nav-item active"
-          {% else %}
-          class = "nav-item"
-          {% endif %}
-          >
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'portfolio:projects' %}">Projects</a>
           </li>
           
-          <li
-          {% if 'about' in request.path %}
-          class = "nav-item active"
-          {% else %}
-          class = "nav-item"
-          {% endif %}
-          >
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'portfolio:about' %}">About Me</a>
           </li>
           

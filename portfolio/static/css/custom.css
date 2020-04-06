@@ -13,7 +13,7 @@ img.card-img-top {
     flex-direction: row;
 }
 
-.project-header:before {
+.project-header:before, .page-header:before {
   background-color: rgba(0, 0, 0, 0.6);
 }
 .description,
