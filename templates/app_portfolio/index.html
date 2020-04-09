@@ -31,7 +31,9 @@
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">Who am I?</h2>
             <h5 class="description">{{ about.short_description }}
-              <a href="{% url 'portfolio:about' %}" class="card-link">...More?</a></h5>
+              <a href="{% url 'portfolio:about' %}" class="card-link">...More?</a>
+            </h5>
+            <br>
             <p class="blockquote blockquote-primary">{{ about.quote_1 | safe }}</p>
           </div>
         </div>

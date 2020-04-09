@@ -5,7 +5,18 @@ ALL CUSTOM CSS
 img.card-img-top {
     height: 230px;
 }
-
+p{
+    font-size: 1em;
+    line-height: 1.8;
+    font-weight: 400;
+}
+.description {
+    line-height: 1.8;
+    font-weight: 400;
+}
+a:hover{
+    text-decoration: none;
+}
 
 /* All div with same height */
 .con-flex >div {
@@ -16,9 +27,5 @@ img.card-img-top {
 .project-header:before, .page-header:before {
   background-color: rgba(0, 0, 0, 0.6);
 }
-.description,
-.card-description,
-.footer-big p {
-  color: #333!important;
-  font-weight: 400!important;
-}
+
+
